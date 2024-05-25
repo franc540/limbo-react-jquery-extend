@@ -1,0 +1,9 @@
+{
+  "name": "limbo-react-jquery-extend",
+  "version": "1.0.0",
+  "description": "Componente reactjs para limbo para extender la función de inicio de render del componente a jQuery",
+  "main": "dist/index.js",
+  "keywords": [],
+  "author": "Webinfo TEAM",
+  "license": "ISC"
+}

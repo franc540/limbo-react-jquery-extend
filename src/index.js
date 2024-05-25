@@ -1,0 +1,1 @@
+export { JqueryExtend } from './limbo-react-jquery-extend';
