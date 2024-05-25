@@ -1,5 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+///import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client'
+
 
 export function JqueryExtend(fnName,Component){
 	
@@ -11,11 +13,8 @@ export function JqueryExtend(fnName,Component){
 		const hotRender=function(NewComponent){
 			//console.log('hotRender');
 			__TARGETS.map((x)=>{
-	
-				ReactDOM.render(
-				  <NewComponent {...x.params}/>,
-				  x.t
-				);
+				
+				createRoot(x.t).render( <NewComponent {...x.params}/>)
 			  })
 		}
 
@@ -27,11 +26,9 @@ export function JqueryExtend(fnName,Component){
 			
 				this.each(function () {
 					__TARGETS.push({t:this,params:params});
-				
-					ReactDOM.render(
-						<Component {...params}/>,
-						this
-					);
+					
+					createRoot(this).render( <Component {...params}/>)
+
 				});
 				if(mode == 'development'){			
 					resolve(hotRender);
