@@ -4,7 +4,8 @@
     "description": "Componente reactjs para limbo para extender la función de inicio de render del componente a jQuery",
     "main": "src/index.js",
     "scripts": {
-        "build": "webpack --mode=production"
+        "build": "webpack --mode=production",
+        "prepare": "npm run build"
     },
     "keywords": [],
     "author": "Webinfo TEAM",

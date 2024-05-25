@@ -16,7 +16,7 @@ const nodeExternals = require('webpack-node-externals');
     module: {
       rules: [
         {
-          test: /\.js$/,
+          test: /\.(js|jsx)$/,
           exclude: /node_modules/,
           use: 'babel-loader'
         }
