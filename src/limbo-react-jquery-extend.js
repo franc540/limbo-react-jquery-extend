@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-export default function JqueryExtend(fnName,Component){
+export function JqueryExtend(fnName,Component){
 	
 	const __TARGETS=[];
 	const mode = process.env.NODE_ENV;

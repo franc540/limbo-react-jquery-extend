@@ -1,4 +1,6 @@
 const path = require('path');
+const nodeExternals = require('webpack-node-externals');
+
   module.exports = {
     entry:[
       './src/index.js',
@@ -6,41 +8,23 @@ const path = require('path');
     output: {
       filename: 'index.js',
       path: path.resolve(__dirname, 'dist'),
+      library: 'JqueryExtend',
+      libraryTarget: 'umd',
+      globalObject: 'this'
     },
     mode: 'production',
     module: {
       rules: [
         {
-          test: /.js$/,
+          test: /\.js$/,
           exclude: /node_modules/,
-          use: {
-            loader: 'babel-loader',
-            options: {
-              presets: ['@babel/preset-env', '@babel/preset-react'],
-            },
-          },
-        },
-        {
-          test: /.css$/,
-          use: [{
-                  loader: 'style-loader',
-                  
-                },{
-                  loader: 'css-loader',
-                  options: {
-                      sourceMap: true
-                  }
-                },
-                {
-                  loader: 'postcss-loader',
-                  options: {
-                      sourceMap: true
-                  }
-                }
-            
-          ]
+          use: 'babel-loader'
         }
-      ],
+      ]
+    },
+    externals: [nodeExternals()],
+    resolve: {
+      extensions: ['.js', '.jsx']
     }
   
   };
